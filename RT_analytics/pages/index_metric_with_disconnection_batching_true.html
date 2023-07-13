@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <script type="text/javascript">
+              (function (m, e, t, r, i, k, a) {
+                i.forEach(function (ii) {
+                   m[ii] =
+                     m[ii] ||
+                       function () {
+                         (m[ii].a = m[ii].a || []).push(arguments);
+                       };
+                  m[ii].l = 1 * new Date();
+                });
+                m['mtsMetricObject'] = (m['mtsMetricObject'] || []).concat(i);
+                m[i] = m[i] ||
+                  function () {
+                    (m[i].a = m[i].a || []).push(arguments);
+                  };
+                m[i].l = 1 * new Date();
+                (k = e.createElement(t)),
+                  (a = e.getElementsByTagName(t)[0]),
+                  (k.async = 1),
+                  (k.src = r),
+                  a.parentNode.insertBefore(k, a);
+                })(window, document, 'script', 'https://static-mm-uat.bd-cloud.mts.ru/front-metric-sdk/metric.js', ['mm1', 'mm2']);
+
+                mm1('create', {id: 'a14ad821-8d57-4a41-8951-0d34f20376ff',
+                               batching: {time: 10000, count: 10},
+                               outQueue: {
+                                          maxConnectionAttempts: 5,
+                                          reconnectTimeout: 3000,
+                                          maxStorageCount: 50
+                                          },
+                                          sendMethod: "xhr"
+                             }
+                   );
+
+        </script>
+    </head>
+    <body>
+        <h1>Sending metrics with disconnection</h1>
+        <div style="margin-bottom: 10px">
+            <button class="button_1" onclick="mm1('message', 'mm1 button click', {test: 1})">SEND 'mm1 metric'</button>
+        </div>
+
+    </body>
+</html>
